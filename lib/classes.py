@@ -26,7 +26,10 @@ class CheckNorek:
                     
                   [By MRHRTZ]
 
-Note : apabila terdapat bug/pertanyaan bisa kontak author lewat wa : 6285559038021
+Note :
+    - Untuk input nomor rekening, input nomor saja, jangan pakai simbol apapun!
+    - apabila terdapat bug/pertanyaan bisa kontak author lewat wa : 6285559038021
+
 '''
         menu = '''
 1. Lihat ID Bank
