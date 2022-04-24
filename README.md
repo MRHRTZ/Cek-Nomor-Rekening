@@ -7,15 +7,18 @@
 ## windows / linux / android (termux)
 
 # Dibutuhkan
-- <a href="https://www.python.org/downloads/">Python3<a> 
+- <a href="https://www.python.org/downloads/">Python3</a> 
+- <a href="https://git-scm.com/download/win">Gitbash (khusus windows)</a>
 
 # Instalasi dan jalankan
 ## Windows
+(Install dahulu python3 dan gitbash)
 - git clone https://github.com/MRHRTZ/Cek-Nomor-Rekening
 - cd Cek-Nomor-Rekening
 - python3 -m pip install -r requirements.txt
 - python3 cekrek.py
 ## Linux/Termux
+- apt install python git -y
 - git clone https://github.com/MRHRTZ/Cek-Nomor-Rekening
 - cd Cek-Nomor-Rekening
 - pip3 install -r requirements.txt
