@@ -4,7 +4,9 @@
 ## Sebelum anda transfer sejumlah uang alangkah baiknya untuk cek terlebih dahulu, apakah norek itu aman, dan tidak ada laporan dari orang2 yang telah menggunakan jasa/beli sesuatu dari pihak tersebut!
 
 # Supported Platform 
-## windows / linux / android (termux)
+- Windows
+- Linux
+- Android 7.0+ (Termux) 
 
 # Dibutuhkan
 - <a href="https://www.python.org/downloads/">Python3</a> 
