@@ -1,4 +1,4 @@
-import readline
+import traceback
 
 from os import system
 from sys import platform
@@ -87,8 +87,8 @@ Note :
         try:
             check = post('https://cekrekening.id/master/cekrekening/report', json={"bankId":bankId,"bankAccountNumber":noRek})
             tojson = json.loads(check.text)
-            if tojson['status']:
-                dataAkun = tojson['data']['laporan']
+            dataAkun = tojson['data']['laporan']
+            if tojson['status'] and dataAkun:
                 infoTarget = {
                     'nomor_akun': dataAkun['accountNo'],
                     'nama_bank': dataAkun['bank']['bankName'],
@@ -110,12 +110,13 @@ Note :
                         'nomor_dilaporkan': lapor['suspectPhoneNumber'],
                         'kronologi': lapor['chronology']
                     })
-                return { 'code': 'waspada', 'message': 'Rekening ini dicurigai!', 'target': infoTarget, 'reporter': infoPelapor }
+                    return { 'code': 'waspada', 'message': 'Rekening ini dicurigai!', 'target': infoTarget, 'reporter': infoPelapor }
         except:
             input('\n\n[ Terdapat kesalahan, cek inputan dan koneksi anda! ]')
+            print(traceback.format_exc())
             self.main()
         else:
-            return { 'code': 'aman', 'message': 'Tidak ditemukan kecurigaan pada nomor rekening ini atau input salah!, tapi anda tetap harus berhati2' }
+            return { 'code': 'aman', 'message': 'NOMER REKENING INI BELUM PERNAH DILAPORKAN TERKAIT TINDAK PENIPUAN APAPUN!\n\nNomor rekening yang belum dilaporkan tidak serta merta mengindikasikan nomor rekening tersebut aman dan terpercaya. Masyarakat dihimbau untuk selalu waspada dalam melakukan transaksi!' }
     
     def printCheckBank(self, bankId, noRek):
         cek = self.checkBank(bankId, noRek)
